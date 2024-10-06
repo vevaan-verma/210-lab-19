@@ -4,6 +4,7 @@ using namespace std;
 #include <string>
 #include <fstream>
 #include <vector>
+#include <climits> // for INT_MAX constant
 
 struct RatingNode;
 struct ReviewNode;
