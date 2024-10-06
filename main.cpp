@@ -123,11 +123,12 @@ void getMovieData(vector<Movie>& movies) {
 		Movie movie(title); // create a new movie with the title
 
 		int numReviews = getIntInput(); // get the number of reviews for the movie
+		srand(time(0)); // seed the random number generator with the current time (to get different random numbers each time)
 
 		for (int i = 0; i < numReviews; i++) { // for each rating
 
 			RatingNode* ratingNode = new RatingNode; // create a new rating node
-			ratingNode->rating = rand() % 5 + 1; // set the rating of the rating node to a random number between 1.0 and 5.0
+			ratingNode->rating = (double) (rand() % 400 + 100) / 100; // set the rating of the rating node to a random number between 1.0 and 5.0
 			movie.addRating(ratingNode); // add the rating node to the front of the ratings linked list
 
 			ReviewNode* reviewNode = new ReviewNode; // create a new review node
